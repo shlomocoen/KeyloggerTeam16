@@ -1,5 +1,3 @@
-import time
-
 from pynput.keyboard import Listener
 from interface_agent import IKeyLogger
 
