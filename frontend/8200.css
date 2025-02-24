@@ -60,6 +60,8 @@ text-shadow: 0.5px 0.5px 1px
 }
 
 
+
+
 .button1:hover {
 letter-spacing: 5px;
 }
@@ -80,6 +82,7 @@ margin-left: 120px;
 margin-right: 120px;
 margin-bottom: 30px;
 background: black;
+opacity: 0.85;
 padding: 10px 20px;
 border-radius: 10px;
 }
