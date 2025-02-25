@@ -1,4 +1,4 @@
-from agent.iKeyLogger import IWriter
+from agent.iWriter import IWriter
 
 class FileWriter(IWriter):
 
