@@ -1,7 +1,4 @@
-# **KeyLogger**
-![Static Badge](https://img.shields.io/badge/Kodcode-blue) ![Static Badge](https://img.shields.io/badge/KeyLogger-green)
-
-
+# KeyLogger
 ### Tracks an enemy computer. Listens to all its keyboard typing.  
 ___
 ## <img src="https://th.bing.com/th/id/R.5cfb779ef6b07d8324a5227b5acff456?rik=C9gC8a%2bwIW1PzQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fhammer%2fhammer_PNG3890.png&ehk=yvhwJTw1BF8fv%2bjJYlHLI1cB3QsdYPykzGWsqU4%2fnM4%3d&risl=1&pid=ImgRaw&r=0" alt="Hammer" width="20" height="20">  Tools and Technologies:
@@ -37,5 +34,9 @@ Yaakov Sasson
 **Developed in Kodecode course, 2025**
 
 
+<div style="background-image: url('https://images.pexels.com/photos/30820149/pexels-photo-30820149/free-photo-of-abstract-geometric-light-tunnel-with-neon-effects.jpeg?auto=compress&cs=tinysrgb&w=600'); padding: 20px; background-size: cover; color: white;">
+  <h1>Welcome to My Project</h1>
+  <p>This is a section with a background image.</p>
+</div>
 
 
