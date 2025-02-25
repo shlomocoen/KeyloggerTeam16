@@ -2,7 +2,7 @@ import requests
 from iWriter import IWriter
 
 
-class NetworkSaver(IWriter):
+class NetworkWriter(IWriter):
     def __init__(self):
         """אתחול המחלקה."""
         self.SERVER_URL = "http://127.0.0.1:5000"  # כתובת השרת שאליו נשלחים הנתונים
