@@ -13,7 +13,7 @@ ___
 </p>
 
 
-
+## Description 
 This project is installed on the computer of an enemy. The software will listen to all the typings on the targeted computer.Next, the data will be encrypted and sent to a server computer.
 From the server computer the data will be sent directly to your computer through the web decrypted.
 ___
@@ -34,9 +34,5 @@ Yaakov Sasson
 **Developed in Kodecode course, 2025**
 
 
-<div style="background-image: url('https://images.pexels.com/photos/30820149/pexels-photo-30820149/free-photo-of-abstract-geometric-light-tunnel-with-neon-effects.jpeg?auto=compress&cs=tinysrgb&w=600'); padding: 20px; background-size: cover; color: white;">
-  <h1>Welcome to My Project</h1>
-  <p>This is a section with a background image.</p>
-</div>
 
 
