@@ -29,6 +29,13 @@ ___
 5: You are now set to review all of the target's keyboard pressings by opening the web through the html file of the "frontend" folder.  
 
 
+##חברי הצוות
+ירוחם מנדלסון
+יוסף שטיינברג
+יעקב ששון
+בנג'י פפר
+
+
 
 
 
