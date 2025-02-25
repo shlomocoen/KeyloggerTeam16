@@ -29,13 +29,12 @@ ___
 5: You are now set to review all of the target's keyboard pressings by opening the web through the html file of the "frontend" folder.  
 
 ## Created by:
-Yerucham Mendelson
-Yosef Steinberg
-Benjy Feffer
-Yaakov Sasson
+Yerucham Mendelson  
+Yosef Steinberg  
+Benjy Feffer  
+Yaakov Sasson  
 
-
-## Developed in Kodecode course, 2025
+Developed in Kodecode course, 2025
 
 
 
