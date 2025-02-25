@@ -28,16 +28,14 @@ ___
 4: On your code editor, in the "agent" folder, run the "main" file. In the "backend" folder, run the "app" file.  
 5: You are now set to review all of the target's keyboard pressings by opening the web through the html file of the "frontend" folder.  
 
-##sחברי הצוות  
-sירוחם מנדלסון  
-sיוסף שטיינברג  
-sבנג'י פפר  
-sיעקב ששון
+## Created by:
+Yerucham Mendelson
+Yosef Steinberg
+Benjy Feffer
+Yaakov Sasson
 
 
-
-
-
+## Developed in Kodecode course, 2025
 
 
 
