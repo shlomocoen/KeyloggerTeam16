@@ -1,90 +1,91 @@
 
+
+/*גורם לכל הכיתובים\גופנים (שבאנגלית) להיות בצורת גופני הCMD*/
 body{
 font-family: "Roboto Mono";
 }
 
-head{
-href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+
+/*טופס הכניסה*/
+#FORM{
+font-size: 20px;                 /*גודל הגופן 20 פיקסל*/
+color: white;                    /*צבע הגופנים לבן*/
+background-color: #222;          /*רקע הטופס בצבע אפור*/
+opacity: 0.9;                    /*עושה שהטופס יהיה טיפה שקוף*/
+width: 300px;                    /*רוחב הטופס 300 פיקסל*/
+border-radius: 20px;             /*מעגל טיפה את הפינות של מסגרת הרקע*/
+z-index: -1;                     /*סדר קידומת בדף (רבד) -1 (עדיפות עליונה)*/
+text-align: center;              /*מיקום הכיתוב בטופס*/
+margin: auto;                    /*מעמיד את הטופס במרכז הדף*/
+box-shadow: 4px 4px 20px black;  /*עושה שלטופס יהיה צל (שחור)*/
+border: 1px solid #222;          /*עושה שיהיה מסגרת לטופס (לא רואים אותה, אבל זה עושה שהכיתוב יתרחק מהשוליים של הטופס)*/
 }
 
-
-#TT{
-color: white;
-background-color: #222;
-opacity: 0.9;
-width: 250px;
-border-radius: 20px;
-z-index: -1;
-text-align: center;
-border: 2px solid white;
-margin: auto;
+/*וידאו רקע*/
+#BACKGROUND video{
+z-index: -100;                   /*סדר קידומת בדף (רבד) -100 (עדיפות אחרונה)*/
+position: fixed;                 /*מסדר את המיקום של הוידאו בדף*/
+top: 0;                          /*עושה שהוידאו יהיה במרחק 0 מהחלק העליון של הדף (שייגע בתקרה)*/
+left: 0;                         /*עושה שהוידאו יהיה במרחק 0 מהחלק השמאלי של הדף (שייגע בקיר השמאלי)*/
+width: 100%;                     /*עושה שרוחב הוידאו יהיה ברוחב 100% ביחס לדף*/
+height: 100%;                    /*עושה שגובה הוידאו יהיה בגובה 100% ביחס לדף*/
+object-fit: cover;               /*עושה שהוידאו יכסה את כל הדף (מבלי שיהיה רווחים כלשהם)*/
 }
 
-
-.colo{
-color: white
+/*תמונה (לוגו של 8-200) רקע*/
+#BACKGROUND img{
+z-index: -99;                    /*סדר קידומת בדף (רבד) -99 (עדיפות אחת לפני האחרונה)*/
+position: fixed;                 /*עושה שהלוגו לא יתפוס שורה שלמה*/
+top: 4;                          /*עושה שהוידאו יהיה במרחק 4 מהחלק העליון של הדף (שיתרחק טיפה מהתקרה)*/*/
+left: 4;                         /*עושה שהוידאו יהיה במרחק 4 מהחלק השמאלי של הדף (שיתרחק טיפה מהקיר השמאלי)*/
+width: 100px;                    /*עושה שהלוגו יהיה בגודל קבוע (100 פיקסלים)*/
 }
 
-
-#haro video{
-z-index: -100;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-
-#haro img{
-z-index: -99;
-position: fixed;
-top: 4;
-left: 4;
-width: 100px;
-}
-
-
+/*כפתורי המחשבים בדף 2 (8200p2.html) (זה קישורים <a> בצורת כפתורים)*/
 .button1 {
-background: #fff;
-color: #557373;
-opacity: 0.8;
-padding: 20px 60px;
-border-radius: 13px;
-text-transform: uppercase;
-letter-spacing: 1px;
-text-decoration: none;
-font-weight: bold;
-text-shadow: 0.5px 0.5px 1px
+max-width: 300px;                /*עושה שהכפתורים לא יהיו יותר מרוחב 300 פיקסלים*/
+min-width: 300px;                /*עושה שהכפתורים לא יהיו פחות מרוחב 300 פיקסלים*/
+text-align: center;              /*עושה שהכיתוב יהיה במרכז הכפתור*/
+white-space: nowrap;             /*עושה שהכפתור ישאר באותו האורך גם אם מכווצים את הדף*/
+display: inline-block;           /*עושה שהכפתורים יהיו באותו אורך (וגם שהכפתור ישאר באותו אורך גם אם מכווצים את הדף)*/
+background: #fff;                /*עושה שהכפתור (הרקע של הקישור) יהיה בצבע לבן*/
+color: #557373;                  /*צבע הכיתוב בכפתור*/
+opacity: 0.8;                    /*עושה שהטופס יהיה טיפה שקוף*/
+padding: 20px 60px;              /*עושה שהכפתור יהיה יותר גדול להכיתוב (גובה 20 פיקסל, רוחב 60 פיקסל)*/
+border-radius: 13px;             /*מעגל טיפה את הפינות של מסגרת הכפתורים*/
+letter-spacing: 1px;             /*עושה שיהיה רווח בין האותיות של 1 פיקסל*/
+text-decoration: none;           /*מוחק את הקו שיש מתחת לקישורים */
+font-weight: bold;               /*עושה שהכיתוב יהיה מודגש*/
+text-shadow: 0.5px 0.5px 1px;    /*עושה שלכיתוב יהיה טיפה צל*/
+font-size: 26px;                 /*עושה שגודל הכיתוב יהיה 26 פיקסלים*/
 }
 
-
-
-
+/*הגדרות בעת ריחוף מעל מכפתורים*/
 .button1:hover {
-letter-spacing: 5px;
+letter-spacing: 5px;             /*עושה שהרווח בין האותיות יהיה 5 פיקסלים*/
+min-width: 350px;                /*עושה שרוחב הכפתורים יהיה לפחות 350 פיקסים*/
 }
 
-
+/*הגדרות מיקומי האובייקטים בדף 2 (8200p2.html)*/
 #data{
-margin-top: 80px;
-margin-left: 180px;
-margin-bottom: 60px;
+direction: rtl;                  /*עושה שהדף יהיה מכיוון ימין לשמאל*/
+margin-top: 80px;                /*עושה שתוכן הדף יתחיל 80 פיקסלים מלמעלה*/
+margin-left: 180px;              /*עושה שהדף יהיה במרחק 180 פיקסלים משמאל*/
+margin-right: 180px;             /*עושה שהדף יהיה במרחק 180 פיקסלים מימין*/
 }
 
 
-
+/*הגדרות המידע בדף 3 (8200p3.html)*/
 .the_data{
-color: white;
-margin-top: 60px;
-margin-left: 120px;
-margin-right: 120px;
-margin-bottom: 30px;
-background: black;
-opacity: 0.85;
-padding: 10px 20px;
-border-radius: 10px;
+color: white;                    /*עושה שהכיתוב יהיה בצבע לבן*/
+margin-top: 60px;                /*עושה שתוכן הדף יתחיל 60 פיקסלים מלמעלה*/
+margin-left: 120px;              /*עושה שהדף יהיה במרחק 120 פיקסלים משמאל*/
+margin-right: 120px;             /*עושה שהדף יהיה במרחק 120 פיקסלים מימין*/
+margin-bottom: 30px;             /*עושה שהמרחק בין הטקסטים יהיה (לפחות) 30 פיקסלים*/
+background: black;               /*עושה שהרקע יהיה בצבע שחור*/
+opacity: 0.85;                   /*עושה שהרקע יהיה טיפה שקוף*/
+padding: 10px 20px;              /*עושה שהכפתור יהיה יותר גדול להכיתוב (גובה 10 פיקסל, רוחב 20 פיקסל)*/
+border-radius: 10px;             /*עושה שקצוות רקע בטקסט יהיה טיפה עגול*/
 }
 
 

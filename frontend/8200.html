@@ -7,36 +7,33 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>אגף המודיעין</title>
-
 </head>
 
 <body>
-    <div id="haro">
-    <video class="video-bg" autoplay muted loop>
-        <source src="videos\video1.mp4" type="video/mp4">
-    </video>
+    <div id="BACKGROUND">
+        <video autoplay muted loop>
+            <source src="videos\video1.mp4" type="video/mp4">
+        </video>
         <img src="images/image2.png">
     </div>
-
 <br><br><br>
-
-    <div id="TT">
-      <h1 id="h1_1" class="colo" rel="stylesheet">Welcome</h1>
-      <form>
-        <input id="personal_number" placeholder="הכנס מספר אישי" type="number" required style="border-radius: 10px;">
-         <p class="colo">TITLE:
-         <label class="colo">Mr.</label>
-         <input type="radio" name="title" value="Mr.">
-        <label class="colo">Mrs.</label>
-        <input type="radio" name="title" value="Mrs."></p>
-        <label class="colo">קראתי ואישרתי את <a href="regulations.html" target="_blank" style="color:#c8d2db">התקנון</a></label>
-        <input id="checkbox" type="checkbox" required><br><br>
-        <input type="submit"
-             id="linkto8200p2"
-             value="אישור"
-             style="background-color:#333333; color:white; border-radius:5px"><br><br>
-    </form>
-        </div>
+    <div id="FORM">
+        <h1 style="font-size: 40px;">LOGIN</h1>
+        <form>
+            <input id="personal_number" placeholder="הכנס מספר אישי..." type="number" required style="font-size: 20px; border-radius: 10px; direction: rtl; size: 90px">
+            <p>TITLE:
+            <label>Mr.</label>
+            <input type="radio" name="title" value="Mr.">
+            <label>Mrs.</label>
+            <input type="radio" name="title" value="Mrs."></p>
+            <label>קראתי ואישרתי את <a href="regulations.html" target="_blank" style="color:#c8d2db">התקנון</a></label>
+            <input id="checkbox" type="checkbox" required><br><br>
+            <input type="submit"
+                 id="linkto8200p2"
+                 value="אישור"
+                 style="background-color:#333333; color:white; border-radius:5px; font-size: 20px"><br><br>
+        </form>
+    </div>
     <script src="8200.js"></script>
 </body>
 </html>
