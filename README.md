@@ -34,9 +34,5 @@ Yaakov Sasson
 **Developed in Kodecode course, 2025**
 
 
-<div style="background-image: url('https://images.pexels.com/photos/30820149/pexels-photo-30820149/free-photo-of-abstract-geometric-light-tunnel-with-neon-effects.jpeg?auto=compress&cs=tinysrgb&w=600'); padding: 20px; background-size: cover; color: white;">
-  <h1>Welcome to My Project</h1>
-  <p>This is a section with a background image.</p>
-</div>
 
 
