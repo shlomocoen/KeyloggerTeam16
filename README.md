@@ -22,5 +22,5 @@ ___
 - HTML5  
 - CSS
 
-
+![javascript](https://simpleicons.org/icons/javascript.svg/[yellow])
 
