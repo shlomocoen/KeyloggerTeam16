@@ -1,4 +1,8 @@
-# **KeyLogger**
+<div style="background-image: url('https://images.pexels.com/photos/30820149/pexels-photo-30820149/free-photo-of-abstract-geometric-light-tunnel-with-neon-effects.jpeg?auto=compress&cs=tinysrgb&w=600'); padding: 40px; background-size: cover; color: white; text-align: center;">
+  <h1>KeyLogger</h1>
+  <p>Brief description of your project.</p>
+</div>
+
 ### Tracks an enemy computer. Listens to all its keyboard typing.  
 ___
 
@@ -13,7 +17,7 @@ ___
 4: On your code editor, in the "agent" folder, run the "main" file. In the "backend" folder, run the "app" file.  
 5: You are now set to review all of the target's keyboard pressings by opening the web through the html file of the "frontend" folder.  
 
-## <img src="https://th.bing.com/th/id/R.5cfb779ef6b07d8324a5227b5acff456?rik=C9gC8a%2bwIW1PzQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fhammer%2fhammer_PNG3890.png&ehk=yvhwJTw1BF8fv%2bjJYlHLI1cB3QsdYPykzGWsqU4%2fnM4%3d&risl=1&pid=ImgRaw&r=0" alt="Hammer" width="20" height="20">  Tools and Technologies:
+##  Tools and Technologies  <img src="https://th.bing.com/th/id/R.5cfb779ef6b07d8324a5227b5acff456?rik=C9gC8a%2bwIW1PzQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fhammer%2fhammer_PNG3890.png&ehk=yvhwJTw1BF8fv%2bjJYlHLI1cB3QsdYPykzGWsqU4%2fnM4%3d&risl=1&pid=ImgRaw&r=0" alt="Hammer" width="20" height="20">:
      
 
 
