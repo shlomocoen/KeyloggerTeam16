@@ -1,4 +1,7 @@
 # **KeyLogger**
+![Static Badge](https://img.shields.io/badge/Kodcode-blue) ![Static Badge](https://img.shields.io/badge/KeyLogger-green)
+
+
 ### Tracks an enemy computer. Listens to all its keyboard typing.  
 ___
 
