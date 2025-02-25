@@ -34,7 +34,7 @@ Yosef Steinberg
 Benjy Feffer  
 Yaakov Sasson  
 
-Developed in Kodecode course, 2025
+**Developed in Kodecode course, 2025**
 
 
 
