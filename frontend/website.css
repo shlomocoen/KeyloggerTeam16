@@ -88,46 +88,52 @@ padding: 10px 20px;              /*עושה שהכפתור יהיה יותר ג�
 border-radius: 10px;             /*עושה שקצוות רקע בטקסט יהיה טיפה עגול*/
 }
 
-
-
-
-
+/*הגדרות של הכפתור מיון ושל החיפוש*/
 .buttons {
-    display: flex; /* מציב את האלמנטים בשורה */
-    justify-content: right; /* מיישר אותם לימין */
-    align-items: center; /* ממקם אותם במרכז אנכי */
-    margin: 20px;
+    display: flex;                  /*מסדר את האלמנטים יפה בדף*/
+    justify-content: right;         /*עושה שהם יהיו בצד ימין*/
+    margin: 20px;                   /*עושה שזה יהיה טיפה יותר למטה (מהחלק העליון של הדף)*/
 }
 
+
+/*הגדרות של הכפתור מיון*/
+.SORTING {
+    display: flex;                  /*ממקם את התמונה בדף*/
+    align-items: center;            /*מסדר את התמונה שלא תימרח*/
+    justify-content: center;        /*מסדר את התמונה שלא יהיה בצדדים*/
+    background: #999;               /*עושה צבע לרקע*/
+    padding: 5px;                   /*מגדיל את האובייקט*/
+    border-radius: 50%;             /*מעגל את הפינות (שיהיה עגול)*/
+    box-shadow: 0px 0px 8px #999;   /*עושה צל לאובייקט (באותו צבע)*/
+    width: 48px;                    /*מגדיל את הרוחב*/
+    cursor: pointer;                /*משנה את הצורה של המצביע בעת ריחוף*/
+}
+
+/*הגדרות של החיפוש*/
 .SEARCH{
-right: 10px;
-margin-right: 120px;
-margin-left: 120px;
-height: 30px;
-width: 20%;
-display: flex;
-cursor: pointer; /*לבירור*/
-padding: 10px 20px;
-background: #999;
-border-radius: 30px;
-align-items: center; /*עושה שהחיפוש יהיה באמצע (בגובה) החיפוש*/
-box-shadow: 0px 0px 8px #999;
+direction: rtl;
+margin-right: 110px;                /*מרחיק את החיפוש ב110 פיקסלים מימין הדף*/
+margin-left: 20px;                  /*עושה שהכפתור משמאל (כפתור המיון) יהיה במרחק 20 פיקסלים*/
+display: flex;                      /*ממקם את התמונה בדף*/
+cursor: pointer;                    /*משנה את הצורה של המצביע בעת ריחוף*/
+padding: 10px 20px;                 /*עושה רווחים מהצדדים*/
+background: #999;                   /*עושה צבע למסגרת*/
+border-radius: 30px;                /*עושה שהפינות יהיו עגולים*/
+box-shadow: 0px 0px 8px #999;       /*עושה צל*/
 }
+
+/*הגדרות לחיפוש בעת ריחוף*/
 .SEARCH:hover input{
-width: 100%;
+width: 100%;                        /*עושה שבעת ריחוף יגדל החיפוש ל300 םיקסלים*/
 }
+/*הגדרות לתיבת חיפוש עצמה*/
 .SEARCH input{
-background: #999;
-font-size: 20px;
-width: 0;
-outline: none;
-border: none;
-font-weight: 500;
-transition: 0.8s;
-background: transition;
-}
-.SEARCH a .fas{
-color: #1daf;
-font-size: 18px;
+background: #999;                  /*עושה שהחיפוש יהיה מלא בצבע*/
+font-size: 23px;                   /*עושה שהכיתוב בחיפוש יהיה בגודל 23 פיקסלים*/
+width: 0;                          /*עושה שגודל החיפוש יהיה מאותחל ל0*/
+outline: none;                     /*מוחק את המסגרת*/
+border: none;                      /*מוחק את המסגרת*/
+font-weight: 600;                  /*משנה עת עובי הגופן*/
+transition: 0.8s;                  /*עושה שיקח לחיפוש ליפתח 0.8 שניות*/
 }
 
