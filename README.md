@@ -34,5 +34,66 @@ Yaakov Sasson
 **Developed, Kodecode course, 2025**
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .timer {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">מאות חוספים על ידי החמאס</div>
+        <div class="subtitle">מחזירים אותם הביתה עכשיו</div>
+        <div class="timer" id="countdown"></div>
+    </div>
+
+    <script>
+        function countdownTimer() {
+            const endDate = new Date("2024-08-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
+
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown").innerHTML = "Time's up!";
+            }
+        }
+
+        const timerInterval = setInterval(countdownTimer, 1000);
+    </script>
+</body>
+</html>
 
 
