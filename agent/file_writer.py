@@ -1,4 +1,4 @@
-from agent.iWriter import IWriter
+from iWriter import IWriter
 
 class FileWriter(IWriter):
 
