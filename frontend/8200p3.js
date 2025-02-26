@@ -25,7 +25,7 @@ fetch(`http://127.0.0.1:5000/api/get_keystrokes?computer=${computer}`).then(
                 //  object אם התקבל מידע עובר בלולאה על הרשימה שבתוך האובייקט דאטה  שבתוך 
                 object.data.forEach(item => {
                     // שמכיל את כל התוכן המפוענח div שולח את התוכן המילולי לפענוח שמחזיר אלמנט 
-                    const decrypted = deciphering(item.decrypted_words)
+                    const decrypted = deciphering(item.encrypted_words)
                     // עם התוכן div יוצר אלמנט כותרת עם קלאס המיועד לעצוב שלו ומכניס אליו את האלמנט 
                     const new_element = document.createElement("h3")
                     new_element.setAttribute('class', 'the_data')
