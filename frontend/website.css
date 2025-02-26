@@ -78,7 +78,7 @@ margin-right: 180px;             /*עושה שהדף יהיה במרחק 180 פ�
 /*הגדרות המידע בדף 3 (data.html)*/
 .the_data{
 color: white;                    /*עושה שהכיתוב יהיה בצבע לבן*/
-margin-top: 60px;                /*עושה שתוכן הדף יתחיל 60 פיקסלים מלמעלה*/
+margin-top: 80px;                /*עושה שתוכן הדף יתחיל 60 פיקסלים מלמעלה*/
 margin-left: 120px;              /*עושה שהדף יהיה במרחק 120 פיקסלים משמאל*/
 margin-right: 120px;             /*עושה שהדף יהיה במרחק 120 פיקסלים מימין*/
 margin-bottom: 30px;             /*עושה שהמרחק בין הטקסטים יהיה (לפחות) 30 פיקסלים*/
@@ -90,8 +90,16 @@ border-radius: 10px;             /*עושה שקצוות רקע בטקסט יה�
 
 
 
+
+
+.buttons {
+    display: flex; /* מציב את האלמנטים בשורה */
+    justify-content: right; /* מיישר אותם לימין */
+    align-items: center; /* ממקם אותם במרכז אנכי */
+    margin: 20px;
+}
+
 .SEARCH{
-position: absolute;
 right: 10px;
 margin-right: 120px;
 margin-left: 120px;
