@@ -137,3 +137,14 @@ font-weight: 600;                  /*משנה עת עובי הגופן*/
 transition: 0.8s;                  /*עושה שיקח לחיפוש ליפתח 0.8 שניות*/
 }
 
+
+#personal_number input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
