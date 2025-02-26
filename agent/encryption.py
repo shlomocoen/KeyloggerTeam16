@@ -1,6 +1,6 @@
 import string
-class Encryption:
 
+class Encryption:
     def __init__(self,text,key):           #  המחלקה מקבלת טקסט להצפנה ומפתח המורכב מרשימה מעורבבת של chars
         self.original_text = text
         self.key = key
@@ -18,7 +18,6 @@ class Encryption:
                 changed_text += letter
 
         return changed_text
-
 
 
 

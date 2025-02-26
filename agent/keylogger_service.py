@@ -29,7 +29,7 @@ class KeyloggerService(IKeyLogger):
         self.send = True
         return self.the_final_list
 
-    # לוקח את התו שהוקש במקלדת, מסדר את התו שיהיה מסודר ושולח לפונקציה ששאחראית להכניס למערך
+    # לוקח את התו שהוקש במקלדת, מסדר את התו שיהיה מסודר ושולח לפונקציה שאחראית להכניס למערך
     def on_press(self,key):
         key = str(key).replace("'", "")
         if key == '""':
