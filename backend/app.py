@@ -32,18 +32,14 @@ def receive_data():
         if not machine_name or not encrypted_words:
             return jsonify({"error": "Missing data"}), 400  # מחזירים שגיאה 400 אם חסרים נתונים
 
-        # מפענחים את המילים המוצפנות באמצעות השעה הנוכחית כמפתח
-        # current_hour = datetime.now().hour  # מקבלים את השעה הנוכחית
-        # decrypted_words = [decrypt_caesar(word, current_hour) for word in encrypted_words]  # מפענחים כל מילה
-
         # יוצרים תיקייה עבור המכונה אם היא לא קיימת
         machine_dir = os.path.join(data_dir, machine_name)
         os.makedirs(machine_dir, exist_ok=True)
 
-        # יוצרים קובץ לוג עם חותמת זמן ושומרים את הנתונים המפוענחים
+        # יוצרים קובץ לוג עם חותמת זמן ושומרים את הנתונים המוצפנים
         log_filename = os.path.join(machine_dir, f"log_{timestamp}.json")
         with open(log_filename, "w") as file:
-            json.dump({"decrypted_words": encrypted_words}, file)  # שומרים את הנתונים בקובץ
+            json.dump({"encrypted_words": encrypted_words}, file)  # שומרים את הנתונים בקובץ
 
         logging.info(f"Received and saved data from {machine_name}")  # רישום אירוע ב-log
         return jsonify({"message": "Data received and saved successfully"}), 200  # מחזירים הודעת הצלחה

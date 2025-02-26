@@ -1,5 +1,5 @@
 from keylogger_service import Service
-from encrypt import Encryption
+from encryption import Encryption
 from file_writer import FileWriter
 import time
 from datetime import datetime
