@@ -33,43 +33,6 @@ Yaakov Sasson
 
 **Developed, Kodecode course, 2025**
 
-# Countdown Timer
-
-**מאות חוספים על ידי החמאס**
-
-**מחזירים אותם הביתה עכשיו**
-
-<div id="countdown"></div>
-
-<script>
-    function countdownTimer() {
-        const endDate = new Date("2024-08-01T00:00:00").getTime();
-        const now = new Date().getTime();
-        const timeLeft = endDate - now;
-
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
-
-        if (timeLeft < 0) {
-            clearInterval(timerInterval);
-            document.getElementById("countdown").innerHTML = "Time's up!";
-        }
-    }
-
-    countdownTimer(); // Initial call to display the timer immediately
-    const timerInterval = setInterval(countdownTimer, 1000);
-</script>
 
 
 
-
-        }
-    }
-
-    countdownTimer(); // Initial call to display the timer immediately
-    const timerInterval = setInterval(countdownTimer, 1000);
-</script>
