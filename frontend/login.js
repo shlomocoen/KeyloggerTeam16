@@ -16,7 +16,7 @@ if (submitBtn) {
             return;
         }
 
-        window.location.href = "8200p2.html"; // מעבר לדף הבא
+        window.location.href = "computers.html"; // מעבר לדף הבא
     });
 }
 

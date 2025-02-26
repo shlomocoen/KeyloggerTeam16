@@ -10,7 +10,7 @@ fetch("http://127.0.0.1:5000/api/get_target_machines_list").then(
             list.forEach(item => {
                 // יוצר אלמנט קישור חדש עם קישור לדף הבא עם פרמטר כשם המכונה
                 const new_element = document.createElement("a")
-                new_element.href = `8200p3.html?computer=${item}`
+                new_element.href = `data.html?computer=${item}`
                 new_element.setAttribute('class', 'button1')
                 new_element.textContent = item
                 console.log(new_element)

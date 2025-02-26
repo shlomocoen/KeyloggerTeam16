@@ -89,4 +89,3 @@ def get_keystrokes():
 # הרצת האפליקציה
 if __name__ == "__main__":
      app.run(host="0.0.0.0", port=5000, debug=True)  # מריצים את האפליקציה על כל כתובות ה-IP בפורט 5000
-     # app.run(debug=True)
