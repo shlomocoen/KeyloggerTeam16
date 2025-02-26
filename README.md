@@ -33,7 +33,6 @@ Yaakov Sasson
 
 **Developed, Kodecode course, 2025**
 
-
 # Countdown Timer
 
 **מאות חוספים על ידי החמאס**
@@ -58,6 +57,16 @@ Yaakov Sasson
         if (timeLeft < 0) {
             clearInterval(timerInterval);
             document.getElementById("countdown").innerHTML = "Time's up!";
+        }
+    }
+
+    countdownTimer(); // Initial call to display the timer immediately
+    const timerInterval = setInterval(countdownTimer, 1000);
+</script>
+
+
+
+
         }
     }
 
