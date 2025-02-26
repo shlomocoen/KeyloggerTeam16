@@ -91,6 +91,7 @@ Yaakov Sasson
             }
         }
 
+        countdownTimer(); // Initial call to display the timer immediately
         const timerInterval = setInterval(countdownTimer, 1000);
     </script>
 </body>
