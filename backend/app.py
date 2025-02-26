@@ -36,7 +36,7 @@ def receive_data():
         machine_dir = os.path.join(data_dir, machine_name)
         os.makedirs(machine_dir, exist_ok=True)
 
-        # יוצרים קובץ לוג עם חותמת זמן ושומרים את הנתונים המןצפנים
+        # יוצרים קובץ לוג עם חותמת זמן ושומרים את הנתונים המוצפנים
         log_filename = os.path.join(machine_dir, f"log_{timestamp}.json")
         with open(log_filename, "w") as file:
             json.dump({"encrypted_words": encrypted_words}, file)  # שומרים את הנתונים בקובץ
